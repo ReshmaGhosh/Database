@@ -3,13 +3,13 @@
 //price
 //image
 
-import mongoose, {Document} from "mongoose";
+import mongoose, { Document } from "mongoose";
 
 export type ProductDocument = Document & {
-title: string;
-price: number;
-image: string;
-}
+  title: string;
+  price: number;
+  image: string;
+};
 
 const ProductSchema = new mongoose.Schema({
   title: {
@@ -25,7 +25,6 @@ const ProductSchema = new mongoose.Schema({
   image: {
     type: String,
   },
-  
 });
 
 export default mongoose.model<ProductDocument>("product", ProductSchema);
