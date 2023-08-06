@@ -12,7 +12,12 @@ import Product from "../models/Product";
 export const createProduct = async (req: Request, res: Response) => {
   const productInformation = new Product({
     title: req.body.title,
-    price: req.body.price,
+    price: parseInt(req.body.price),
+    image: req.body.image,
+    image2: req.body.image2,
+    image3: req.body.image3,
+    image4: req.body.image4,
+    description: req.body.description,
   });
   try {
     const product = await createProductService(productInformation);

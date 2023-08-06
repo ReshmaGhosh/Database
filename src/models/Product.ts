@@ -6,24 +6,44 @@
 import mongoose, { Document } from "mongoose";
 
 export type ProductDocument = Document & {
+  // title: string;
+  // price: number;
+  // image: string;
+
   title: string;
-  price: number;
+  price: string;
   image: string;
+  image2: string;
+  image3: string;
+  image4: string;
+  description: string;
 };
 
 const ProductSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    default: "mango",
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
-    default: 30,
   },
   image: {
     type: String,
+    required: true,
+  },
+  image2: {
+    type: String,
+  },
+  image3: {
+    type: String,
+  },
+  image4: {
+    type: String,
+  },
+  description: {
+    type: String,
+    require: true,
   },
 });
 
